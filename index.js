@@ -11,6 +11,14 @@ const songs = [
     { title: "Come and Get Your Love", artist: "Redbone", genre: "Rock" },
     { title: "I'm Not in Love", artist: "10cc", genre: "Pop" },
     { title: "Fooled Around and Fell in Love", artist: "Elvin Bishop", genre: "Rock" },
+    { title: "All This Time", artist: "Drax", genre: "Pop" },
+    { title: "Monday", artist: "Rocekt", genre: "Rock" },
+    { title: "The Boxer", artist: "Groot", genre: "Pop" },
+    { title: "Damage", artist: "HER", genre: "R&B" },
+    { title: "Let It Be", artist: "The Beatles", genre: "Rock" },
+    
+
+
     // Feel free to add even more songs
 ];
 
@@ -19,12 +27,16 @@ const songs = [
 const guardians = {
     "Star-Lord": "Rock",
     "Gamora": "Pop",
+    "Drax" : "Pop" , 
+    "Rocket" : "Rock",
+    "Groot" : "Pop",
     // Add preferences for Drax, Rocket, and Groot
 };
 
 // Function to generate playlist based on preferred genre
 function generatePlaylist(guardians, songs) {
     // Use the map() function to create playlists for each Guardian
+    map() 
     // Your code here
 }
 
