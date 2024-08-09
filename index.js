@@ -16,8 +16,6 @@ const songs = [
     { title: "The Boxer", artist: "Groot", genre: "Pop" },
     { title: "Damage", artist: "HER", genre: "R&B" },
     { title: "Let It Be", artist: "The Beatles", genre: "Rock" },
-    
-
 
     // Feel free to add even more songs
 ];
@@ -36,11 +34,46 @@ const guardians = {
 // Function to generate playlist based on preferred genre
 function generatePlaylist(guardians, songs) {
     // Use the map() function to create playlists for each Guardian
-    map() 
-    // Your code here
+    const playList = [];
+
+    Object.keys(guardians).map((key) => {
+        const guardianPlaylist = songs.filter(song => song.genre === guardians[key]);
+
+        const playlistItem = {
+            guardian: key,
+            playlist: guardianPlaylist
+        }
+
+        playList.push(playlistItem);
+    });
+    
+    // append playlist items
+    playList.map(item => {
+        const playListItemHtml = `
+            <div class='playlist-item'>
+                <h4 class='playlist-item-title'>${item.guardian}'s Playlist </h4>
+                <ul class='playlist-item-songs'>
+                    ${item.playlist.map(playlistItem => {
+                    return(
+                        `
+                            <li class='playlist-item-song'>
+                                <a href="">${playlistItem.title}</a> by ${playlistItem.artist}
+                            </li>
+                        `
+                    )
+                    })}
+                </ul>
+            <div>
+        `
+
+        const playListsElement = document.getElementById('playlists');
+        // append html, add to the existing playlist items html
+        playListsElement.innerHTML = playListsElement.innerHTML + playListItemHtml;
+    });
+
+// Your code here
 }
 
 // Call generatePlaylist and display the playlists for each Guardian
 generatePlaylist(guardians, songs);
-
 
